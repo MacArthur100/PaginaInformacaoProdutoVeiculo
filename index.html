@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículo - Detalhes</title>
+    <h1>CHEVROLET TRAX - 2025</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .vehicle-container {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .vehicle-image {
+            width: 60%;
+            opacity: 0;
+            animation: slideIn 2s forwards; /* Animação para a imagem entrar pela esquerda */
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 2s forwards; /* Descrição aparece após a imagem */
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .extra-info {
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .extra-info img {
+            width: 50%;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container do veículo -->
+    <div class="vehicle-container">
+        <!-- Imagem do veículo -->
+        <img id="vehicle-image" class="vehicle-image" src="IMG/download png.png" alt="Veículo"> <!-- Caminho corrigido -->
+
+        <!-- Descrição do veículo -->
+        <div id="vehicle-description" class="description">
+            Este veículo oferece uma experiência única de dirigibilidade e conforto. Com um motor de alta performance e design inovador, ele garante não apenas economia de combustível, mas também uma ótima performance em diferentes tipos de terreno. Além disso, o veículo conta com tecnologias avançadas de segurança.
+        </div>
+    </div>
+
+    <!-- Botões para saber mais -->
+    <div class="button-container">
+        <button onclick="showExtraInfo(1)">Saiba mais - Segurança</button>
+        <button onclick="showExtraInfo(2)">Saiba mais - Economia</button>
+        <button onclick="showExtraInfo(3)">Saiba mais - Design</button>
+    </div>
+
+    <!-- Área para exibir informações adicionais ao clicar nos botões -->
+    <div id="extra-info-1" class="extra-info hidden">
+        <p>A segurança do veículo é garantida com sistema de frenagem de emergência, sensores de colisão e 6 airbags para proteção dos ocupantes.</p>
+        <img src="IMG/segurança Chevrolet Traker.jfif" alt="Segurança do veículo"> <!-- Caminho corrigido -->
+    </div>
+
+    <div id="extra-info-2" class="extra-info hidden">
+        <p>Este veículo é altamente econômico, oferecendo até 18 km/litro na cidade e 22 km/litro na estrada, garantindo uma grande economia a longo prazo.</p>
+        <img src="IMG/images (1).png" alt="Economia de combustível"> <!-- Caminho corrigido -->
+    </div>
+
+    <div id="extra-info-3" class="extra-info hidden">
+        <p>O design moderno e aerodinâmico não só melhora o desempenho do veículo, mas também o torna visualmente impressionante. Ideal para quem valoriza estética e funcionalidade.</p>
+        <img src="IMG/download.jfif" alt="Design do veículo">
+    </div>
+
+    <script>
+        // Função para mostrar as informações adicionais conforme o botão clicado
+        function showExtraInfo(infoType) {
+            // Ocultar todas as informações adicionais
+            document.getElementById('extra-info-1').classList.add('hidden');
+            document.getElementById('extra-info-2').classList.add('hidden');
+            document.getElementById('extra-info-3').classList.add('hidden');
+
+            // Exibir a informação correspondente
+            if (infoType === 1) {
+                document.getElementById('extra-info-1').classList.remove('hidden');
+            } else if (infoType === 2) {
+                document.getElementById('extra-info-2').classList.remove('hidden');
+            } else if (infoType === 3) {
+                document.getElementById('extra-info-3').classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
